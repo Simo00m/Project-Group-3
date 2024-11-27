@@ -3,6 +3,26 @@ import "./App.css";
 import Home from "./pages/home";
 import AboutUs from "./pages/aboutus";
 import Login from "./pages/login";
+import Signup from "./pages/Signup";
+
+
+// const App = () => {
+//   return (
+//     <Router> {/* Wrap your routes with BrowserRouter */}
+//       <Routes> {/* Define all the routes inside the Routes component */}
+//         {/* Define route for Login page */}
+//         <Route path="/" element={<Login />} />
+        
+//         {/* Define route for Signup page */}
+//         <Route path="/signup" element={<Signup />} />
+        
+//         {/* You can add more routes here */}
+//         <Route path="/home" element={<Home />} />
+//         <Route path="/aboutus" element={<AboutUs />} />
+//       </Routes>
+//     </Router>
+//   );
+// };
 
 function App() {
   return (
@@ -29,3 +49,8 @@ function App() {
 }
 
 export default App;
+
+
+
+
+

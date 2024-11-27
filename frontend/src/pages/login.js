@@ -1,11 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import "./style.css"; 
 
 const Login = () => {
   return (
     <>
       {/* Background Video */}
-      <video src="/video.mp4" autoPlay loop muted></video> 
+      <video src="/video.mp4" autoPlay loop muted></video>
+
 
       <div className="container">
         <div className="login-form">
