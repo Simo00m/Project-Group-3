@@ -1,5 +1,5 @@
 {
-  "name": "myreactproject",
+  "name": "project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,11 +8,8 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4",
-    "webpack": "^5.96.1",
-    "webpack-cli": "^5.1.4"
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
