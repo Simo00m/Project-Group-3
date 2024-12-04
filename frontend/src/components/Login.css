@@ -1,0 +1,72 @@
+/* Center the container and add a shadow */
+.login-container {
+    text-align: center;
+    padding: 30px;
+    max-width: 350px;
+    margin: auto;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style for the profile image */
+  .profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 2px solid #4a90e2;
+  }
+  
+  /* Header title */
+  .login-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Welcome text */
+  .welcome-text {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Input fields */
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  /* Button styling */
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Hover effect on button */
+  .login-form button:hover {
+    background-color: #357ab8;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  
