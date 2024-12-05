@@ -61,7 +61,7 @@ const Login = ({ setIsAuthenticated }) => { // Accept setIsAuthenticated as a pr
               onChange={(e) => setUsername(e.target.value)}
               required
             />
-            <label>Email</label>
+            <label></label>
             <i className="fa-solid fa-envelope"></i>
           </div>
           <div className="form-group">
@@ -71,7 +71,7 @@ const Login = ({ setIsAuthenticated }) => { // Accept setIsAuthenticated as a pr
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <label>Password</label>
+            <label></label>
             <i className="fa-solid fa-lock"></i>
           </div>
           <p><input type="checkbox" /> Remember me</p>

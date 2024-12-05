@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)); /* Lighter gradient */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Lighter gradient */
 }
 
 /* Background video */
@@ -22,10 +22,10 @@
 
 /* Login container */
 .login-container {
-  background-color: rgba(255, 255, 255, 0.9); /* Lighter background */
+  background-color: (73, 48, 48, 0.9); /* Lighter background */
   padding: 40px 50px;
   border-radius: 12px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 15px 30px (0, 0, 0, 0.2); /* Subtle shadow */
   width: 400px;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -38,7 +38,7 @@ h2 {
   font-size: 26px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #333; /* Darker text for visibility */
+  color: #ffffff; /* Darker text for visibility */
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -53,7 +53,7 @@ h2 {
   height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #4a90e2; /* Soft blue border */
+  border: 3px solid #0cfb18; /* Soft blue border */
 }
 
 /* Input fields */
@@ -62,7 +62,7 @@ h2 {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
-  border: 2px solid #ddd; /* Lighter border */
+  border: 2px solid #ffffff; /* Lighter border */
   border-radius: 8px;
   font-size: 16px;
   background-color: #f7f7f7; /* Light background for inputs */
@@ -74,7 +74,7 @@ h2 {
 /* Focus state for inputs */
 .login-form input[type="text"]:focus,
 .login-form input[type="password"]:focus {
-  border-color: #4a90e2;
+  border-color: #ffffff;
   background-color: #fff; /* Lighter background on focus */
   outline: none;
 }
@@ -84,7 +84,7 @@ h2 {
   width: 100%;
   padding: 12px;
   background-color: #4a90e2; /* Blue button */
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 16px;
   font-weight: 600;
   border: none;
@@ -112,7 +112,7 @@ h2 {
   width: 100%;
   text-align: center;
   font-size: 14px;
-  color: #aaa;
+  color: #ffffff;
 }
 
 /* Label for input fields */
@@ -174,7 +174,7 @@ h2 {
 
 /* Styling links */
 p {
-  color: #777; /* Lighter text for the footer */
+  color: #ffffff; /* Lighter text for the footer */
 }
 
 p a {
