@@ -12,7 +12,7 @@
 /* Card styles */
 .book-card {
   width: 220px;
-  height: 400px; /* Increased height for better content alignment */
+  height: fit-content;
   text-align: center;
   background-color: #fff;
   padding: 15px; /* Slightly larger padding */

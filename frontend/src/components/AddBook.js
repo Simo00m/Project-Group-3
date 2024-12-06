@@ -34,7 +34,7 @@ const AddBook = () => {
   };
 
   return (
-    <div>
+    <div className="add-book-container">
       <h2>Add New Book</h2>
 
       {/* Book Add Form */}

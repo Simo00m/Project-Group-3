@@ -116,7 +116,7 @@ h2 {
 }
 
 /* Label for input fields */
-.form-group label {
+.form-group-login label {
   position: absolute;
   top: 50%;
   left: 10px;
@@ -124,17 +124,18 @@ h2 {
   font-size: 16px;
   color: #777; /* Lighter label color */
   transition: 0.3s linear;
+  margin-top: 30px;
 }
 
 /* Form group styling */
-.form-group {
+.form-group-login {
   width: 100%;
   position: relative;
   margin-bottom: 20px;
 }
 
 /* Styling input fields within form group */
-.form-group input {
+.form-group-login input {
   width: 100%;
   padding: 12px;
   border: 2px solid #ddd; /* Lighter border */
@@ -146,7 +147,7 @@ h2 {
   transition: all 0.3s ease;
 }
 
-.form-group input:focus {
+.form-login input:focus {
   border-color: #4a90e2;
   outline: none;
   background-color: #fff;

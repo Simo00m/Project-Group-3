@@ -54,7 +54,7 @@ const Login = ({ setIsAuthenticated }) => { // Accept setIsAuthenticated as a pr
 
         {/* Login Form */}
         <form onSubmit={handleSubmit} className="login-form">
-          <div className="form-group">
+          <div className="form-group-login">
             <input
               type="text"
               value={username}
@@ -64,7 +64,7 @@ const Login = ({ setIsAuthenticated }) => { // Accept setIsAuthenticated as a pr
             <label>Username</label>
             <i className="fa-solid fa-envelope"></i>
           </div>
-          <div className="form-group">
+          <div className="form-group-login">
             <input
               type="password"
               value={password}

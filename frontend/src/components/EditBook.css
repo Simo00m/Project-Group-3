@@ -24,6 +24,10 @@ body {
   box-shadow: 0 4px 8px rgba(221, 6, 6, 0.1);
 }
 
+.edit-book-container h2 {
+  color: #4989f2;
+}
+
 h1 {
   text-align: center;
   color: #333333;
@@ -40,12 +44,12 @@ form {
 }
 
 /* Label and Input field styles */
-label {
+.edit-book-container label {
   font-size: 1rem;
   color: #555;
   font-weight: 600;
-  margin-bottom: 5px;
-  margin-top: 30px; /* Increased margin to move labels further down */
+  /* margin-bottom: 5px; */
+  /*margin-top: 30px; /* Increased margin to move labels further down */
 }
 
 /* Input, Textarea and button styling */
@@ -97,9 +101,14 @@ button:disabled {
   flex-direction: column;
 }
 
+.form-group label {
+  margin-bottom: 5px;
+}
+
 .form-group input,
 .form-group textarea {
-  margin-top: 5px; /* Add some space between the input and the label */
+  margin-top: 0; /* Add some space between the input and the label */
+  
 }
 
 /* Error Message Styling */

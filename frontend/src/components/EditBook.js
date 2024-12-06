@@ -41,9 +41,10 @@ const EditBook = () => {
 
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Title:</label>
+          <label for="title">Title:</label>
           <input
             type="text"
+            name="title"
             value={book.title}
             onChange={(e) => setBook({ ...book, title: e.target.value })}
             required

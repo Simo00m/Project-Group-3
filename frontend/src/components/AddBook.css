@@ -15,13 +15,17 @@
   }
   
   /* Container for the EditBook form */
-  .edit-book-container {
+  .add-book-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 30px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(221, 6, 6, 0.1);
+  }
+
+  .add-book-container h2 {
+    color: #4989f2;
   }
   
   h1 {
@@ -40,12 +44,12 @@
   }
   
   /* Label and Input field styles */
-  label {
+  .add-book-container label {
     font-size: 1rem;
     color: #555;
     font-weight: 600;
     margin-bottom: 5px;
-    margin-top: 30px; /* Increased margin to move labels further down */
+    /*margin-top: 30px; /* Increased margin to move labels further down */
   }
   
   /* Input, Textarea and button styling */
