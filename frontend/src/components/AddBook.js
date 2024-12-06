@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios'; // Import axios for API calls
 import { useNavigate } from 'react-router-dom'; // Hook to navigate to the books page after adding a book
-import './AddBook.css';
 
 const AddBook = () => {
   const [title, setTitle] = useState('');

@@ -5,6 +5,7 @@ import './AdminDashboard.css';
 import DeleteConfrimationModal from './modals/DeleteConfrimationModal'; // Corrected import
 import './Modal.css'; // Import the modal styles from a separate CSS file
 
+
 const AdminDashboard = () => {
   const [books, setBooks] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -53,44 +54,36 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="admin-dashboard-wrapper">
-      {/* Background Video */}
-      <video autoPlay loop muted className="background-video">
-        <source src="/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <div>
+      <h2>Admin Dashboard</h2>
+      <button onClick={() => navigate('/add-book')}>Add New Book</button>
 
-      <div className="dashboard-container">
-        <h2>Admin Dashboard</h2>
-        <button onClick={() => navigate('/add-book')}>Add New Book</button>
-
-        <div className="book-list">
-          {books.map((book) => (
-            <div key={book.id} className="book-card">
-              <img src={book.coverImage} alt={book.title} className="book-image" />
-              <h3>{book.title}</h3>
-              <p>{book.author}</p>
-              <button onClick={() => handleEdit(book.id)}>Edit</button>
-              <button onClick={() => handleDeleteClick(book)}>Delete</button>
-            </div>
-          ))}
-        </div>
-
-        {/* Success Message */}
-        {successMessage && <p>{successMessage}</p>}
-
-        {/* Delete Confirmation Modal */}
-        {showModal && (
-          <DeleteConfrimationModal
-            showModal={showModal}
-            onDelete={handleDelete}
-            onCancel={() => setShowModal(false)} // Close the modal
-          />
-        )}
-
-        {/* Submit Changes Button */}
-        <button onClick={handleSubmitChanges}>Submit Changes</button>
+      <div className="book-list">
+        {books.map((book) => (
+          <div key={book.id} className="book-card">
+            <img src={book.coverImage} alt={book.title} className="book-image" />
+            <h3>{book.title}</h3>
+            <p>{book.author}</p>
+            <button onClick={() => handleEdit(book.id)}>Edit</button>
+            <button onClick={() => handleDeleteClick(book)}>Delete</button>
+          </div>
+        ))}
       </div>
+
+      {/* Success Message */}
+      {successMessage && <p>{successMessage}</p>}
+
+      {/* Delete Confirmation Modal */}
+      {showModal && (
+        <DeleteConfrimationModal
+          showModal={showModal}
+          onDelete={handleDelete}
+          onCancel={() => setShowModal(false)} // Close the modal
+        />
+      )}
+
+      {/* Submit Changes Button */}
+      <button onClick={handleSubmitChanges}>Submit Changes</button>
     </div>
   );
 };
