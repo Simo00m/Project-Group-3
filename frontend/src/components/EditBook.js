@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './EditBook.css';  // Import the CSS file for styling
 
 const EditBook = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // Retrieve the book ID from the URL params
   const [book, setBook] = useState({ title: '', author: '', description: '', coverImage: '' });
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const EditBook = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await axios.get(`http://localhost:7000/books/${id}`); // Fetch book details by id
+        const response = await axios.get(`http://localhost:7000/books/${id}`); // Fetch the book details by its ID
         setBook(response.data);
       } catch (err) {
         console.error('Error fetching book:', err);
@@ -24,9 +25,9 @@ const EditBook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:7000/books/${id}`, book); // Update book data
+      const response = await axios.put(`http://localhost:7000/books/${id}`, book); // Update the book information
       if (response.status === 200) {
-        navigate('/admin-dashboard'); // Redirect back to the dashboard after editing
+        navigate('/admin-dashboard'); // Redirect to the admin dashboard after a successful update
       }
     } catch (err) {
       console.error('Error updating book:', err);
@@ -35,11 +36,11 @@ const EditBook = () => {
   };
 
   return (
-    <div>
+    <div className="edit-book-container">
       <h2>Edit Book</h2>
 
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label>Title:</label>
           <input
             type="text"
@@ -48,7 +49,14 @@ const EditBook = () => {
             required
           />
         </div>
-        <div>
+
+        {/* Background Video */}
+      <video autoPlay loop muted className="background-video">
+        <source src="/video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+        <div className="form-group">
           <label>Author:</label>
           <input
             type="text"
@@ -57,7 +65,8 @@ const EditBook = () => {
             required
           />
         </div>
-        <div>
+
+        <div className="form-group">
           <label>Description:</label>
           <textarea
             value={book.description}
@@ -65,7 +74,8 @@ const EditBook = () => {
             required
           />
         </div>
-        <div>
+
+        <div className="form-group">
           <label>Cover Image URL:</label>
           <input
             type="text"
@@ -75,10 +85,10 @@ const EditBook = () => {
           />
         </div>
 
-        <button type="submit">Update Book</button>
+        <button type="submit" className="submit-btn">Update Book</button>
       </form>
 
-      {error && <p>{error}</p>}
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };
