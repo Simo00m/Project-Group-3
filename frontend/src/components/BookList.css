@@ -1,5 +1,9 @@
 /* BookList.css */
 
+h3 {
+  color: black;
+}
+
 /* Flexbox layout for the book list */
 .book-list {
   display: flex;
