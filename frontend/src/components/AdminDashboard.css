@@ -30,7 +30,7 @@
   max-width: 1200px;
   padding: 40px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.8); /* Darker background */
+  background-color: (0, 0, 0, 0.8); /* Darker background */
   backdrop-filter: blur(15px); /* Blurring background more */
   border-radius: 15px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Deep shadow */
