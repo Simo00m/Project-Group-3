@@ -9,6 +9,7 @@ const EditBook = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  // Fetch book details on mount
   useEffect(() => {
     const fetchBook = async () => {
       try {
@@ -41,7 +42,7 @@ const EditBook = () => {
 
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label for="title">Title:</label>
+          <label htmlFor="title">Title:</label>
           <input
             type="text"
             name="title"
@@ -52,10 +53,10 @@ const EditBook = () => {
         </div>
 
         {/* Background Video */}
-      <video autoPlay loop muted className="background-video">
-        <source src="/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        <video autoPlay loop muted className="background-video">
+          <source src="/video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
         <div className="form-group">
           <label>Author:</label>

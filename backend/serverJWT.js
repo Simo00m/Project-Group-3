@@ -111,6 +111,43 @@ app.post("/books", (req, res) => {
   }
 });
  
+// PUT endpoint to update a book by ID
+app.put("/books/:id", (req, res) => {
+  const bookId = parseInt(req.params.id, 10);
+  const { title, author, description, coverImage } = req.body;
+
+  if (!title || !author || !description || !coverImage) {
+    return res.status(400).json({ message: "All fields are required" });
+  }
+
+  try {
+    const books = readBooksFromFile();
+
+    // Find the book to update
+    const bookIndex = books.findIndex((book) => book.id === bookId);
+    if (bookIndex === -1) {
+      return res.status(404).json({ message: "Book not found" });
+    }
+
+    // Update the book's details
+    books[bookIndex] = {
+      ...books[bookIndex],
+      title,
+      author,
+      description,
+      coverImage
+    };
+
+    // Save the updated list back to the file
+    writeBooksToFile(books);
+
+    res.status(200).json({ message: "Book updated successfully", book: books[bookIndex] });
+  } catch (err) {
+    console.error("Error updating book:", err);
+    res.status(500).json({ message: "Failed to update book" });
+  }
+});
+
 const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
