@@ -78,6 +78,38 @@ app.delete("/books/:id", (req, res) => {
     res.status(500).json({ message: "Failed to delete book" });
   }
 });
+
+// POST endpoint to add a new book
+app.post("/books", (req, res) => {
+  const { title, author, description, coverImage } = req.body;
+
+  if (!title || !author || !description || !coverImage) {
+    return res.status(400).json({ message: "All fields are required" });
+  }
+
+  try {
+    const books = readBooksFromFile();
+
+    // Create a new book object
+    const newBook = {
+      id: books.length + 1, // Set a new ID (simple method)
+      title,
+      author,
+      description,
+      coverImage
+    };
+
+    books.push(newBook); // Add new book to the array
+
+    // Save the updated list to the file
+    writeBooksToFile(books);
+
+    res.status(201).json({ message: "Book added successfully", book: newBook });
+  } catch (err) {
+    console.error("Error adding book:", err);
+    res.status(500).json({ message: "Failed to add book" });
+  }
+});
  
 const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {

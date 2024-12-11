@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // Import axios for API calls
-import { useNavigate } from 'react-router-dom'; // Hook to navigate to the books page after adding a book
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './AddBook.css';
 
 const AddBook = () => {
@@ -10,6 +10,9 @@ const AddBook = () => {
   const [coverImage, setCoverImage] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
+  // Assuming the token is stored in localStorage after login
+  const token = localStorage.getItem('token'); // Get the JWT token from localStorage
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,10 +25,15 @@ const AddBook = () => {
     };
 
     try {
-      // POST request to add a new book to the backend
-      const response = await axios.post('http://localhost:7000/books', newBook); // Adjust API URL as needed
+      // POST request to add a new book, including the Authorization header with the JWT token
+      const response = await axios.post('http://localhost:7000/books', newBook, {
+        headers: {
+          Authorization: `Bearer ${token}` // Add token to the header
+        }
+      });
+
       if (response.status === 201) {
-        navigate('/admin-dashboard'); // Navigate back to admin dashboard on successful book creation
+        navigate('/admin-dashboard'); // Navigate on successful book creation
       }
     } catch (err) {
       setError('Error adding book. Please try again.');
@@ -37,7 +45,6 @@ const AddBook = () => {
     <div className="add-book-container">
       <h2>Add New Book</h2>
 
-      {/* Book Add Form */}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Title:</label>
